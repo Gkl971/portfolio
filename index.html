@@ -1091,4 +1091,18 @@ const spy=new IntersectionObserver(entries=>{
 },{rootMargin:'-40% 0px -50% 0px'});
 sections.forEach(s=>spy.observe(s));
 
-// TYPEWRI
+// TYPEWRITER
+const phrases=['Administrateur Systèmes & Réseaux','Technicien Cybersécurité','Passionné par les infrastructures','En recherche d\'alternance Bac+4'];
+let pi=0,ci=0,del=false;
+const tw=document.getElementById('typewriter');
+function typewriter(){
+  if(!tw)return;
+  const cur=phrases[pi];
+  if(!del){tw.textContent=cur.slice(0,ci+1);ci++;if(ci===cur.length){del=true;setTimeout(typewriter,1800);return;}}
+  else{tw.textContent=cur.slice(0,ci-1);ci--;if(ci===0){del=false;pi=(pi+1)%phrases.length;}}
+  setTimeout(typewriter,del?40:80);
+}
+typewriter();
+</script>
+</body>
+</html>
