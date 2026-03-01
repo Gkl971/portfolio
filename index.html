@@ -21,6 +21,25 @@
   --border: #1e2d4a;
   --border2: rgba(0,212,255,0.2);
 }
+body.light-mode {
+  --navy: #f0f4f8;
+  --navy2: #e2e8f0;
+  --card: #ffffff;
+  --card2: #f8fafc;
+  --text: #1a202c;
+  --muted: #4a5568;
+  --border: #cbd5e0;
+  --border2: rgba(0,150,200,0.3);
+}
+body.light-mode nav{background:rgba(240,244,248,0.95);}
+body.light-mode .nav-links{background:var(--navy2);}
+body.light-mode footer{background:var(--navy2);}
+body.light-mode .form-group input,
+body.light-mode .form-group textarea{background:#f8fafc;color:var(--text);}
+body.light-mode .hero::before,body.light-mode .hero::after{opacity:.4;}
+/* THEME TOGGLE */
+.theme-toggle{background:none;border:1px solid var(--border2);color:var(--text);width:36px;height:36px;border-radius:8px;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:.9rem;transition:.2s;flex-shrink:0;}
+.theme-toggle:hover{border-color:var(--accent);color:var(--accent);}
 *{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
 body{font-family:'Instrument Sans',sans-serif;background:var(--navy);color:var(--text);overflow-x:hidden;}
@@ -236,6 +255,7 @@ footer a{color:var(--accent);text-decoration:none;}
       <li><a href="#contact">Contact</a></li>
     </ul>
     <button class="burger" id="burger"><i class="fas fa-bars"></i></button>
+    <button class="theme-toggle" id="theme-toggle" title="Mode clair / sombre"><i class="fas fa-moon"></i></button>
   </div>
 </nav>
 
@@ -365,9 +385,13 @@ footer a{color:var(--accent);text-decoration:none;}
       </div>
       <div class="card" style="text-align:center;padding:24px;">
         <div style="font-size:1.8rem;margin-bottom:12px;">🏆</div>
-        <h4 style="font-family:'Syne',sans-serif;font-weight:700;margin-bottom:8px;">Objectif final — RSSI / Architecte Sécu</h4>
-        <p class="card-text">À terme, viser un rôle de <strong>RSSI</strong> ou d'<strong>Architecte Sécurité</strong> dans une grande DSI, un MSSP ou un intégrateur cybersécurité.</p>
-        <div style="margin-top:10px;"><span class="tag tag-orange">RSSI</span><span class="tag tag-orange">Architecte Sécu</span></div>
+        <h4 style="font-family:'Syne',sans-serif;font-weight:700;margin-bottom:8px;">Objectif final</h4>
+        <p class="card-text">Viser l'un de ces rôles dans une grande DSI, un MSSP ou un cabinet conseil :</p>
+        <div style="margin-top:12px;display:flex;flex-direction:column;gap:6px;">
+          <div style="background:rgba(0,212,255,.06);border:1px solid rgba(0,212,255,.15);border-radius:8px;padding:6px 12px;font-size:.82rem;font-weight:600;color:var(--accent);">🛡️ Expert en Cybersécurité</div>
+          <div style="background:rgba(124,58,237,.07);border:1px solid rgba(124,58,237,.2);border-radius:8px;padding:6px 12px;font-size:.82rem;font-weight:600;color:#a78bfa;">💼 Consultant IT</div>
+          <div style="background:rgba(0,229,160,.06);border:1px solid rgba(0,229,160,.18);border-radius:8px;padding:6px 12px;font-size:.82rem;font-weight:600;color:var(--green);">🌐 Architecte Réseau</div>
+        </div>
       </div>
     </div>
   </div>
@@ -411,7 +435,7 @@ footer a{color:var(--accent);text-decoration:none;}
   <div style="margin-top:16px;" class="reveal">
     <div class="card card-green">
       <h3 class="card-title">Objectifs Professionnels</h3>
-      <p class="card-text">À l'issue de mon BTS SIO SISR, je souhaite intégrer l'<strong>ENI en alternance</strong> pour un <strong>Bac+4 Administrateur Réseau (2 ans)</strong>, puis enchaîner avec un <strong>Bac+5 Expert en Sécurité Digitale (1 an)</strong>, toujours en alternance. À terme, je vise le rôle de <strong>RSSI</strong> ou d'<strong>Architecte Sécurité</strong> dans une DSI ou chez un intégrateur cybersécurité.</p>
+      <p class="card-text">À l'issue de mon BTS SIO SISR, je souhaite intégrer l'<strong>ENI en alternance</strong> pour un <strong>Bac+4 Administrateur Réseau (2 ans)</strong>, puis enchaîner avec un <strong>Bac+5 Expert en Sécurité Digitale (1 an)</strong>, toujours en alternance. À terme, je vise un rôle d'<strong>Expert en Cybersécurité</strong>, de <strong>Consultant IT</strong> ou d'<strong>Architecte Réseau</strong> dans une DSI ou chez un intégrateur.</p>
     </div>
   </div>
 </section>
@@ -662,31 +686,31 @@ footer a{color:var(--accent);text-decoration:none;}
     <div class="cert-card">
       <div class="cert-badge" style="background:rgba(124,58,237,.1);color:#a78bfa;">PIX</div>
       <div>
-        <div class="cert-title">PIX — Certification Numérique</div>
+        <div class="cert-title">PIX — Certification Numérique <span style="color:var(--green);font-size:.78rem;font-weight:600;">✔ Obtenue</span></div>
         <div class="cert-sub">Ministère de l'Éducation Nationale — 2024</div>
         <div class="tags" style="margin-top:8px;"><span class="tag tag-purple">Compétences numériques</span><span class="tag tag-purple">Score obtenu</span></div>
       </div>
     </div>
-    <div class="cert-card" style="border:1px dashed var(--border);opacity:.75;">
-      <div class="cert-badge" style="background:rgba(0,212,255,.08);color:var(--accent);">SOON</div>
+    <div class="cert-card" style="border:1px dashed var(--border);opacity:.85;">
+      <div class="cert-badge" style="background:rgba(0,212,255,.08);color:var(--accent);font-size:.6rem;">EN PRÉP.</div>
       <div>
-        <div class="cert-title">CompTIA Network+ — En préparation</div>
+        <div class="cert-title">CompTIA Network+ <span style="color:var(--orange);font-size:.75rem;">(en préparation)</span></div>
         <div class="cert-sub">Objectif : 2026 — Réseaux & infrastructure</div>
         <div class="tags" style="margin-top:8px;"><span class="tag">Réseau</span><span class="tag">TCP/IP</span><span class="tag">Sécurité</span></div>
       </div>
     </div>
-    <div class="cert-card" style="border:1px dashed var(--border);opacity:.75;">
-      <div class="cert-badge" style="background:rgba(0,229,160,.08);color:var(--green);">SOON</div>
+    <div class="cert-card" style="border:1px dashed var(--border);opacity:.85;">
+      <div class="cert-badge" style="background:rgba(0,229,160,.08);color:var(--green);font-size:.6rem;">EN PRÉP.</div>
       <div>
-        <div class="cert-title">SecNumacadémie ANSSI — Hygiène Informatique</div>
+        <div class="cert-title">SecNumacadémie ANSSI <span style="color:var(--orange);font-size:.75rem;">(en préparation)</span></div>
         <div class="cert-sub">Objectif : 2026 — Cybersécurité & RGPD</div>
         <div class="tags" style="margin-top:8px;"><span class="tag tag-green">Cybersécurité</span><span class="tag tag-green">ANSSI</span><span class="tag tag-green">RGPD</span></div>
       </div>
     </div>
-    <div class="cert-card" style="border:1px dashed var(--border);opacity:.75;">
-      <div class="cert-badge" style="background:rgba(255,107,53,.08);color:var(--orange);">SOON</div>
+    <div class="cert-card" style="border:1px dashed var(--border);opacity:.85;">
+      <div class="cert-badge" style="background:rgba(255,107,53,.08);color:var(--orange);font-size:.6rem;">EN PRÉP.</div>
       <div>
-        <div class="cert-title">Stormshield Network Security Administrator</div>
+        <div class="cert-title">Stormshield Network Security Administrator <span style="color:var(--orange);font-size:.75rem;">(en préparation)</span></div>
         <div class="cert-sub">Objectif : 2026/2027 — Pare-feu & sécurité réseau</div>
         <div class="tags" style="margin-top:8px;"><span class="tag tag-orange">Stormshield</span><span class="tag tag-orange">Firewall</span><span class="tag tag-orange">SNS</span></div>
       </div>
@@ -963,22 +987,22 @@ footer a{color:var(--accent);text-decoration:none;}
         <i class="fas fa-check-circle" style="font-size:1.5rem;margin-bottom:8px;display:block;"></i>
         <strong>Message envoyé !</strong><br><span style="font-size:.82rem;color:var(--muted);">Je vous répondrai dans les plus brefs délais.</span>
       </div>
-      <form id="contact-form" action="https://formspree.io/f/mnjbyodb" method="POST">
+      <form id="contact-form">
         <div class="form-group">
           <label>Nom / Entreprise</label>
-          <input type="text" name="name" placeholder="Votre nom ou société" required>
+          <input type="text" id="f-name" placeholder="Votre nom ou société" required>
         </div>
         <div class="form-group">
           <label>Email</label>
-          <input type="email" name="email" placeholder="votre@email.com" required>
+          <input type="email" id="f-email" placeholder="votre@email.com" required>
         </div>
         <div class="form-group">
           <label>Objet</label>
-          <input type="text" name="_subject" placeholder="ex : Offre d'alternance Bac+4" required>
+          <input type="text" id="f-subject" placeholder="ex : Offre d'alternance Bac+4" required>
         </div>
         <div class="form-group">
           <label>Message</label>
-          <textarea name="message" placeholder="Votre message…" required></textarea>
+          <textarea id="f-message" placeholder="Votre message…" required></textarea>
         </div>
         <button type="submit" id="form-btn" class="btn-primary" style="width:100%;justify-content:center;border:none;cursor:pointer;font-size:.9rem;"><i class="fas fa-paper-plane"></i>Envoyer le message</button>
         <p style="margin-top:10px;text-align:center;font-size:.75rem;color:var(--muted);">Ou directement : <a href="mailto:djeckael.reson@gmail.com" style="color:var(--accent);">djeckael.reson@gmail.com</a></p>
@@ -1014,63 +1038,95 @@ footer a{color:var(--accent);text-decoration:none;}
 </footer>
 
 <script>
-// FORMSPREE AJAX
-const form = document.getElementById('contact-form');
-const btn = document.getElementById('form-btn');
-const success = document.getElementById('form-success');
-if(form){
-  form.addEventListener('submit', async(e)=>{
-    e.preventDefault();
-    btn.innerHTML='<i class="fas fa-spinner fa-spin"></i> Envoi en cours…';
-    btn.disabled=true;
-    try{
-      const res = await fetch(form.action,{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}});
-      if(res.ok){form.style.display='none';success.style.display='block';}
-      else{btn.innerHTML='<i class="fas fa-exclamation-triangle"></i> Erreur — Réessayez';btn.disabled=false;}
-    }catch{btn.innerHTML='<i class="fas fa-exclamation-triangle"></i> Erreur réseau';btn.disabled=false;}
-  });
-}
-window.addEventListener('scroll',()=>{
-  const el=document.getElementById('scroll-progress');
-  const p=window.scrollY/(document.body.scrollHeight-window.innerHeight)*100;
-  el.style.width=p+'%';
+// ── THEME TOGGLE ──────────────────────────────────────────────────────────────
+const themeBtn = document.getElementById('theme-toggle');
+const saved = localStorage.getItem('theme');
+if(saved === 'light'){ document.body.classList.add('light-mode'); themeBtn.innerHTML='<i class="fas fa-sun"></i>'; }
+themeBtn.addEventListener('click', () => {
+  document.body.classList.toggle('light-mode');
+  const isLight = document.body.classList.contains('light-mode');
+  themeBtn.innerHTML = isLight ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+  localStorage.setItem('theme', isLight ? 'light' : 'dark');
 });
 
-// REVEAL ON SCROLL
-const observer=new IntersectionObserver(entries=>{
-  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});
-},{threshold:.12});
-document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+// ── FORMSPREE CONTACT FORM ────────────────────────────────────────────────────
+const form    = document.getElementById('contact-form');
+const btn     = document.getElementById('form-btn');
+const success = document.getElementById('form-success');
+if(form){
+  form.addEventListener('submit', async(e) => {
+    e.preventDefault();
+    const name    = document.getElementById('f-name').value.trim();
+    const email   = document.getElementById('f-email').value.trim();
+    const subject = document.getElementById('f-subject').value.trim();
+    const message = document.getElementById('f-message').value.trim();
+    if(!name || !email || !subject || !message){ return; }
+    btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Envoi en cours…';
+    btn.disabled  = true;
+    try {
+      const res = await fetch('https://formspree.io/f/mnjbyodb', {
+        method:  'POST',
+        headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, email, _subject: subject, message })
+      });
+      if(res.ok){
+        form.style.display  = 'none';
+        success.style.display = 'block';
+      } else {
+        const data = await res.json();
+        btn.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Erreur — Réessayez';
+        btn.disabled  = false;
+        console.error('Formspree error:', data);
+      }
+    } catch(err) {
+      btn.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Erreur réseau';
+      btn.disabled  = false;
+    }
+  });
+}
 
-// BURGER
-document.getElementById('burger').addEventListener('click',()=>{
+// ── SCROLL PROGRESS ───────────────────────────────────────────────────────────
+window.addEventListener('scroll', () => {
+  const el = document.getElementById('scroll-progress');
+  const p  = window.scrollY / (document.body.scrollHeight - window.innerHeight) * 100;
+  el.style.width = p + '%';
+});
+
+// ── REVEAL ON SCROLL ──────────────────────────────────────────────────────────
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: .12 });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// ── BURGER MENU ───────────────────────────────────────────────────────────────
+document.getElementById('burger').addEventListener('click', () => {
   document.getElementById('nav-links').classList.toggle('open');
 });
 
-// ACTIVE NAV LINK
-const sections=document.querySelectorAll('section[id]');
-const navLinks=document.querySelectorAll('.nav-links a');
-const spy=new IntersectionObserver(entries=>{
-  entries.forEach(e=>{
+// ── ACTIVE NAV LINK ───────────────────────────────────────────────────────────
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.nav-links a');
+const spy = new IntersectionObserver(entries => {
+  entries.forEach(e => {
     if(e.isIntersecting){
-      navLinks.forEach(a=>a.classList.remove('active'));
-      const act=document.querySelector('.nav-links a[href="#'+e.target.id+'"]');
-      if(act)act.classList.add('active');
+      navLinks.forEach(a => a.classList.remove('active'));
+      const act = document.querySelector('.nav-links a[href="#' + e.target.id + '"]');
+      if(act) act.classList.add('active');
     }
   });
-},{rootMargin:'-40% 0px -50% 0px'});
-sections.forEach(s=>spy.observe(s));
+}, { rootMargin: '-40% 0px -50% 0px' });
+sections.forEach(s => spy.observe(s));
 
-// TYPEWRITER
-const phrases=['Administrateur Systèmes & Réseaux','Technicien Cybersécurité','Passionné par les infrastructures','En recherche d\'alternance Bac+4'];
-let pi=0,ci=0,del=false;
-const tw=document.getElementById('typewriter');
+// ── TYPEWRITER ────────────────────────────────────────────────────────────────
+const phrases = ['Administrateur Systèmes & Réseaux','Expert en Cybersécurité','Consultant IT','Architecte Réseau'];
+let pi=0, ci=0, del=false;
+const tw = document.getElementById('typewriter');
 function typewriter(){
-  if(!tw)return;
-  const cur=phrases[pi];
-  if(!del){tw.textContent=cur.slice(0,ci+1);ci++;if(ci===cur.length){del=true;setTimeout(typewriter,1800);return;}}
-  else{tw.textContent=cur.slice(0,ci-1);ci--;if(ci===0){del=false;pi=(pi+1)%phrases.length;}}
-  setTimeout(typewriter,del?40:80);
+  if(!tw) return;
+  const cur = phrases[pi];
+  if(!del){ tw.textContent=cur.slice(0,ci+1); ci++; if(ci===cur.length){ del=true; setTimeout(typewriter,1800); return; } }
+  else    { tw.textContent=cur.slice(0,ci-1); ci--; if(ci===0){ del=false; pi=(pi+1)%phrases.length; } }
+  setTimeout(typewriter, del ? 40 : 80);
 }
 typewriter();
 </script>
